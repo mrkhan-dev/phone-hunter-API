@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1 class="text-8xl">testing</h1>
+    <header class="w-[1170px] mx-auto mt-8">
+      <!-- header -->
+    </header>
+    <main>
+      <section class="w-full md:w-full lg:w-[1170px] mx-auto mt-8">
+        <input
+          type="text"
+          placeholder="Search your phone"
+          id="search-input"
+          class="input input-bordered input-info w-full max-w-xs focus:outline-none"
+        />
+        <button onclick="searchButton()" class="btn btn-info text-white">
+          Search
+        </button>
+      </section>
+
+      <section>
+        <div
+          id="phone-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 w-full md:w-fit md:gap-5 lg:gap-5 lg:w-[1170px] mx-auto mt-8"
+        >
+          <!-- <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- footer -->
+    </footer>
     <!-- link js file -->
     <script src="./js/phone.js"></script>
   </body>
