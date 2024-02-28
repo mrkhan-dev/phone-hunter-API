@@ -1,4 +1,4 @@
-const loadPhone = async (searchPhone) => {
+const loadPhone = async (searchPhone = "13") => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/phones?search=${searchPhone}`
   );
@@ -34,8 +34,8 @@ const displayPhones = (phones) => {
   <div class="card-body">
     <h2 class="card-title">${phone.phone_name}</h2>
     <p>Brand: ${phone.brand}</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <div class="card-actions justify-center">
+      <button onclick="handleShowAll('${phone.slug}')" class="btn bg-[#0d6efd] mt-5 text-white">SHOW DETAILS</button>
     </div>
   </div>
     `;
@@ -43,6 +43,17 @@ const displayPhones = (phones) => {
   });
 
   toggleLoadingSpinner(false);
+};
+
+// handle show all button
+
+const handleShowAll = async (id) => {
+  console.log("clicked", id);
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/phone/${id}`
+  );
+  const data = await res.json();
+  console.log(data);
 };
 
 // handel search button
@@ -63,3 +74,5 @@ const toggleLoadingSpinner = (isLoading) => {
     spinner.classList.add("hidden");
   }
 };
+
+loadPhone();

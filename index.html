@@ -17,7 +17,7 @@
       <!-- header -->
     </header>
     <main>
-      <section class="w-full md:w-full lg:w-[1170px] mx-auto mt-8">
+      <section class="w-full flex gap-2 md:w-full lg:w-[1170px] mx-auto mt-8">
         <input
           type="text"
           placeholder="Search your phone"
@@ -32,7 +32,7 @@
       <!-- spinner -->
       <section>
         <div id="spinner" class="hidden text-center">
-          <span class="loading loading-spinner text-success"></span>
+          <span class="loading loading-spinner text-info"></span>
         </div>
         <div
           id="phone-container"
@@ -60,6 +60,26 @@
         >
           <button class="btn btn-success">Show All</button>
         </div>
+        <!-- modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn" onclick="show_details_modal.showModal()">
+          open modal
+        </button>
+        <dialog
+          id="show_details_modal"
+          class="modal modal-bottom sm:modal-middle"
+        >
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
     </main>
     <footer>
